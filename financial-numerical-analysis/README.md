@@ -4,7 +4,39 @@
 
 Python coursework archive maintained by **Jason**, organized as assignments 01-14 within the **Programming Coursework Portfolio** collection. Required exercises, alternatives, practice, an older source version and explicitly labeled AI-assisted versions are preserved. Byte-identical copies are represented once, with a link where an exercise is repeated across assignments.
 
-These are student solutions to prescribed tasks, not claims of original research. Alternative filenames do not prove originality. Classroom-practice provenance has not been independently verified. Explicit other-person files, their unverified helper and the exam directory are excluded. Instructor handouts, reports, raw datasets, databases, generated figures and archives are not redistributed. No license to redistribute external course or financial data is asserted.
+<!-- gallery:start -->
+## Selected visual outputs
+
+Archived Matplotlib figures from the coursework folders, with original labels retained. These images were not regenerated after the code audit. Each figure links to its implementation; see the [validation notes](QUALITY.md) for scope.
+
+### Monte Carlo price paths
+
+![Monte Carlo price paths](assets/figures/historical-monte-carlo-paths.jpg)
+
+Observed prices (black) alongside five colored stochastic sample paths from the original simulation exercise.
+
+[Assignment 05 · simulation variant](assignment-05/extra/exercise-06_monte_carlo_alternative.py)
+
+### Intraday price and volume
+
+![Intraday price and volume](assets/figures/intraday-price-volume.jpg)
+
+Aligned price and volume panels separate morning and afternoon trading sessions and mark the previous close. Axes: p = price, v = volume, t = time.
+
+[Assignment 04 · financial visualization](assignment-04/exercise-05.py)
+
+### Finite-difference spectrum comparison
+
+![Finite-difference spectrum comparison](assets/figures/finite-difference-spectrum.jpg)
+
+Forward, backward and central differences applied to the supplied q and τ(q) table. Horizontal axis: α = dτ(q)/dq; vertical axis: f(α) = qα − τ(q).
+
+[Assignment 13 · numerical differentiation](assignment-13/exercise-01.py)
+
+<!-- gallery:end -->
+
+
+These are student solutions to prescribed tasks, not claims of original research. Alternative filenames do not prove originality. Classroom-practice provenance has not been independently verified. Explicit other-person files, their unverified helper and the exam directory are excluded. The reviewed historical figures in this gallery are included; instructor handouts, original reports, raw datasets, databases and archives are excluded. No license to redistribute external course or financial data is asserted.
 
 ## Assignment index
 
@@ -45,9 +77,9 @@ Database scripts require FNA_DB_HOST, FNA_DB_PORT, FNA_DB_USER, FNA_DB_PASSWORD 
 
 ## Validation and historical behavior
 
-All retained Python files passed in-memory syntax compilation. This does not execute imports or establish numerical, empirical or runtime correctness. No database access, network request, simulation, estimate, chart or numerical answer was executed or certified.
+All retained Python files passed syntax compilation. Selected numerical functions also passed isolated synthetic regression checks, documented in the [central audit](../AUDIT.md). Historical data-dependent analyses and the gallery figures were not rerun.
 
-Original algorithms were preserved. Publication preparation normalized filenames/references, removed personal identifiers and absolute machine paths, replaced embedded connection settings with environment reads and removed commented connection/SQL examples. Known issues remain documented in assignment READMEs: integer-array elimination, iterative stopping/return behavior, LPPLS fit/plot inconsistency, zero-filled missing returns, coverage gaps and incomplete GBM difference schemes. Some original plotting strings produce escape-sequence warnings.
+Initial publication preparation organized and privacy-redacted the archive. The subsequent audit corrected integer-array elimination, iterative stopping and return values, the LPPLS plotting variable and an invalid string escape. Missing-return treatment, historical coverage, simulation calibration and incomplete GBM difference schemes still require review; see each assignment's notes.
 
 A private preparation audit is stored outside this repository and must not be published. Public maintainer: Jason.
 

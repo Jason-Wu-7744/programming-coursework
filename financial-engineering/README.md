@@ -4,6 +4,38 @@
 
 Four undergraduate financial engineering assignments, organized by assignment. The scripts preserve the original classroom implementations and Chinese comments. They document course exercises rather than independent research.
 
+<!-- gallery:start -->
+## Selected visual outputs
+
+Archived Matplotlib figures from the coursework folders, with original labels retained. These images were not regenerated after the code audit. Each figure links to its implementation; see the [validation notes](QUALITY.md) for scope.
+
+### Stock basket and index-futures comparison
+
+![Stock basket and index-futures comparison](assets/figures/portfolio-cumulative-log-returns.jpg)
+
+Five cumulative log-return series: the stock basket and IF, IH, IC and IM index futures. This is the historical comparison used before the hedge-regression step.
+
+[Assignment 01 · futures hedging](assignment-01/sample_01.py)
+
+### Implied-volatility smile
+
+![Implied-volatility smile](assets/figures/implied-volatility-smile-may-2026.jpg)
+
+Numerical BSM inversion across strikes for the May-expiry exercise snapshot: call estimates in blue and put estimates in red. Solver and quote-consistency limitations are recorded in the assignment notes.
+
+[Assignment 04 · numerical inverse pricing](assignment-04/sample_04.py)
+
+### BSM price sensitivity to spot
+
+![BSM price sensitivity to spot](assets/figures/bsm-option-price-vs-spot.jpg)
+
+Call prices (blue) and put prices (red) across a spot-price sweep, holding the other exercise parameters fixed.
+
+[Assignment 03 · option sensitivity](assignment-03/sample_03.py)
+
+<!-- gallery:end -->
+
+
 | Assignment | Topic | Main script | External workbook required |
 | --- | --- | --- | --- |
 | [01](assignment-01/README.md) | Equity index futures hedging | `sample_01.py` | Yes |
@@ -25,7 +57,7 @@ Run each script with its own assignment directory as the working directory. Seve
 
 ## Scope and validation
 
-All four distinct standalone Python source files found in the course folder are included. The two local RAR packages were inspected for source members and contain no additional standalone Python implementations. Original workbooks, reports, figures, teaching slides, report templates, archives and IDE files are excluded. Workbook schemas and data provenance limitations are documented in each assignment.
+All four distinct standalone Python source files found in the course folder are included. The two local RAR packages were inspected for source members and contain no additional standalone Python implementations. The reviewed historical figures in this gallery are included. Original workbooks, reports, teaching slides, report templates, archives and IDE files are excluded. Workbook schemas and data provenance limitations are documented in each assignment.
 
 The Python files passed syntax-only compilation. This does not verify numerical results or install dependencies. Assignments 01, 02 and 04 cannot reproduce the original outputs without separately obtained workbooks. Assignment 01's regression direction was corrected in the documented audit; read its README before interpreting any hedge ratio. Initial packaging preserved financial algorithms; subsequent bounded corrections and synthetic tests are documented in the root audit.
 

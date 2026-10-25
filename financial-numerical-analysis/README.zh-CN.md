@@ -4,6 +4,38 @@
 
 本课程是 [Programming Coursework Portfolio](../README.zh-CN.md) 的一部分，按每次作业组织。目前公开 100 个课程 Python 文件，不含检查工具。全部作业目录保留；部分来源待确认的参考实现暂不公开。
 
+<!-- gallery:start -->
+## 精选图表
+
+以下为原作业目录中保存的历史 Matplotlib 输出，保留原图标签；本次未在代码审计后重新生成。图表对应代码见各图下方，验证范围见[质量说明](QUALITY.zh-CN.md)。
+
+### Monte Carlo 价格路径
+
+![Monte Carlo 价格路径](assets/figures/historical-monte-carlo-paths.jpg)
+
+黑线为历史价格，五条彩线为原模拟练习生成的随机样本路径。
+
+[作业05 · 模拟替代版本](assignment-05/extra/exercise-06_monte_carlo_alternative.py)
+
+### 日内价格与成交量双面板
+
+![日内价格与成交量双面板](assets/figures/intraday-price-volume.jpg)
+
+价格与成交量双面板对齐时间轴，区分上午和下午交易，并标记前收盘价。p 为价格，v 为成交量，t 为时间。
+
+[作业04 · 金融可视化](assignment-04/exercise-05.py)
+
+### 三种差分方法的谱曲线对照
+
+![三种差分方法的谱曲线对照](assets/figures/finite-difference-spectrum.jpg)
+
+对给定的 q 与 τ(q) 表进行向前、向后和中心差分。横轴为 α = dτ(q)/dq，纵轴为 f(α) = qα − τ(q)。
+
+[作业13 · 数值微分](assignment-13/exercise-01.py)
+
+<!-- gallery:end -->
+
+
 ## 作业目录
 
 | 作业 | 内容 |
@@ -35,6 +67,6 @@ python -m pip install -r requirements.txt
 
 ## 归属与验证
 
-署名使用 Jason。课程指定任务不被描述为原创方法，AI 辅助版本和已知限制按实际情况标注。文件组织、隐私和文档一致性做了发布整理，原数学算法没有被悄悄改成另一套实现。
+署名使用 Jason。课程指定任务、AI 辅助版本和已知限制按实际情况标注。后续定点修复及十组合成测试见[仓库审计记录](../AUDIT.zh-CN.md)。
 
-发布时仅检查 Python 语法和文档链接，未全面复算历史结果。详见 [QUALITY.md](QUALITY.md) 与[英文课程说明](README.md)。公开可见不等于授予第三方资料的再分发许可；本仓库尚未选择开源许可证。
+Python 语法、双语文档配对和本地链接已检查；部分数值函数通过隔离合成测试，历史实证结果未全面复算。详见[质量说明](QUALITY.zh-CN.md)与[英文课程说明](README.md)。公开可见不等于授予第三方资料的再分发许可；本仓库尚未选择开源许可证。
