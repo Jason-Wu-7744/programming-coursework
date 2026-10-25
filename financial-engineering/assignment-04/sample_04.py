@@ -40,9 +40,9 @@ for i in range(len(K_all_5)):
     K = K_all_5[i]
     price_call = price_call_all[i]
     # 找使 f(x)=0 的 x
-    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0)
+    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0).item()
     price_put = price_put_all[i]
-    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0)
+    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0).item()
 plt.figure(figsize=(16, 9), dpi=200)
 plt.plot(K_all_5, sigma_call_5, 'bo-', label='看涨期权的隐含波动率', linewidth=2)
 plt.plot(K_all_5, sigma_put_5, 'rs-', label='看跌期权的隐含波动率', linewidth=2)
@@ -71,9 +71,9 @@ for i in range(len(K_all_5)):
     K = K_all_5[i]
     price_call = price_call_all[i]
     # 找使 f(x)=0 的 x
-    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0)
+    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0).item()
     price_put = price_put_all[i]
-    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0)
+    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0).item()
 plt.figure(figsize=(16, 9), dpi=200)
 plt.plot(K_all_5, sigma_call_5, 'bo-', label='看涨期权的隐含波动率', linewidth=2)
 plt.plot(K_all_5, sigma_put_5, 'rs-', label='看跌期权的隐含波动率', linewidth=2)
@@ -102,9 +102,9 @@ for i in range(len(K_all_5)):
     K = K_all_5[i]
     price_call = price_call_all[i]
     # 找使 f(x)=0 的 x
-    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0)
+    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0).item()
     price_put = price_put_all[i]
-    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0)
+    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0).item()
 plt.figure(figsize=(16, 9), dpi=200)
 plt.plot(K_all_5, sigma_call_5, 'bo-', label='看涨期权的隐含波动率', linewidth=2)
 plt.plot(K_all_5, sigma_put_5, 'rs-', label='看跌期权的隐含波动率', linewidth=2)
@@ -134,9 +134,9 @@ for i in range(len(K_all_5)):
     K = K_all_5[i]
     price_call = price_call_all[i]
     # 找使 f(x)=0 的 x
-    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0)
+    sigma_call_5[i] = optimize.fsolve(myfun_call, sigma_0).item()
     price_put = price_put_all[i]
-    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0)
+    sigma_put_5[i] = optimize.fsolve(myfun_put, sigma_0).item()
 plt.figure(figsize=(16, 9), dpi=200)
 plt.plot(K_all_5, sigma_call_5, 'bo-', label='看涨期权的隐含波动率', linewidth=2)
 plt.plot(K_all_5, sigma_put_5, 'rs-', label='看跌期权的隐含波动率', linewidth=2)

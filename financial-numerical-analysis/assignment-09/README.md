@@ -43,6 +43,6 @@ Keep this assignment folder as the working directory even for code inside extra/
 
 Every retained Python file passed in-memory syntax compilation only. No imports, database/network call, empirical analysis, simulation, figure or numerical answer was executed or certified.
 
-Stopping compares the difference of two L1 norms instead of the norm of the difference; Gauss-Seidel returns old x0. There is no cap or divergence detection. Sector data is concatenated by row rather than joined by date. Results are unvalidated.
+The audit corrected the iterate-difference/residual stopping rule, latest-iterate return and finite iteration cap. Arbitrary input matrices can still fail to converge. Sector data is concatenated by row rather than joined by date. Results are unvalidated.
 
 Preparation changed filenames/references, privacy-sensitive strings, personal paths and connection settings only. Known numerical behavior was documented rather than silently corrected.

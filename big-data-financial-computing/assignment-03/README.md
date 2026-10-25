@@ -28,3 +28,7 @@ Create a Python 3.12 environment and install the course-level `requirements.txt`
 
 - Portfolio sorting and Fama–MacBeth are specified course tasks. Recheck sorting dates, lagged information and inference before treating the estimates as a research result.
 - This is a course archive. Python syntax is checked separately; the historical financial results have not been fully rerun or independently validated for publication.
+
+## Follow-up compatibility correction
+
+The four Fama–MacBeth coefficient reads now use explicit positional iloc access on the statsmodels pandas Series. A synthetic four-parameter fit checks the actual append expressions; this does not revalidate sorting, dates, inference or historical estimates.

@@ -20,7 +20,7 @@ The original scalar-input export source is not recorded. The [SSE option contrac
 
 ## Run
 
-From the `financial-engineering` directory, after installing the this course’s requirements.txt:
+From the `financial-engineering` directory, after installing this course’s requirements.txt:
 
 ```powershell
 Set-Location assignment-03
@@ -36,4 +36,3 @@ The script writes five JPG sensitivity charts into the assignment directory and 
 - Prices are clipped to zero; that operation does not replace input validation or a check of pricing identities.
 - No automated put-call-parity or benchmark tests are included. Syntax-only compilation passed during packaging; it does not validate the numerical outputs.
 
-中文摘要：通过五组参数变化图展示BSM看涨与看跌期权价格敏感性。无需外部数据文件，保留原作业代码与模型假设。

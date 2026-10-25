@@ -1,5 +1,7 @@
 # Supplementary practice
 
+English | [中文](README.zh-CN.md)
+
 Maintained by Jason. These files came from the student source directory's top level; their exact assignment association is unknown. They are practice rather than claims of original research.
 
 | Script | Observed role |

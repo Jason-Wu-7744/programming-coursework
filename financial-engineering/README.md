@@ -27,7 +27,7 @@ Run each script with its own assignment directory as the working directory. Seve
 
 All four distinct standalone Python source files found in the course folder are included. The two local RAR packages were inspected for source members and contain no additional standalone Python implementations. Original workbooks, reports, figures, teaching slides, report templates, archives and IDE files are excluded. Workbook schemas and data provenance limitations are documented in each assignment.
 
-The Python files passed syntax-only compilation. This does not verify numerical results or install dependencies. Assignments 01, 02 and 04 cannot reproduce the original outputs without separately obtained workbooks. Assignment 01 retains a known regression-direction error; read its README before interpreting any hedge ratio. No financial algorithm was corrected during packaging.
+The Python files passed syntax-only compilation. This does not verify numerical results or install dependencies. Assignments 01, 02 and 04 cannot reproduce the original outputs without separately obtained workbooks. Assignment 01's regression direction was corrected in the documented audit; read its README before interpreting any hedge ratio. Initial packaging preserved financial algorithms; subsequent bounded corrections and synthetic tests are documented in the root audit.
 
 中文摘要：本目录按四次课程作业保存课程作业实现。原始行情数据、报告和课件不随仓库发布；运行方式及已知问题见各作业说明。
 

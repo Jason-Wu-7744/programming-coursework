@@ -51,7 +51,7 @@ for i in range(2, 296, 3):
     # print(min_code)
     max_code = ((1+data.iloc[i-2, 1:])*(1+data.iloc[i-1, 1:])*(1+data.iloc[i, 1:])-1).idxmax()
     min_return_3.append((1+data.loc[i+1, min_code])*(1+data.loc[i+2, min_code])*(1+data.loc[i+3, min_code])-1)
-    max_return_3.append((1+data.loc[i+1, min_code])*(1+data.loc[i+2, min_code])*(1+data.loc[i+3, max_code])-1)
+    max_return_3.append((1+data.loc[i+1, max_code])*(1+data.loc[i+2, max_code])*(1+data.loc[i+3, max_code])-1)
 print(min_return_3)
 print(sum(min_return_3)/len(min_return_3))
 print(max_return_3)

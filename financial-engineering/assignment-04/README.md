@@ -29,7 +29,7 @@ The source provider of the exercise workbook is not recorded. [SSE option market
 
 ## Run
 
-From the `financial-engineering` directory, after installing the this course’s requirements.txt and a pandas-compatible Excel reader:
+From the `financial-engineering` directory, after installing this course’s requirements.txt and a pandas-compatible Excel reader:
 
 ```powershell
 Set-Location assignment-04
@@ -46,4 +46,6 @@ The script writes four JPG charts in the assignment directory and opens a Matplo
 - The exercise treats the underlying as non-dividend-paying and uses one fixed rate. The code does not verify those assumptions against market quotes.
 - Syntax-only compilation passed during packaging. Solver convergence and end-to-end execution with the original workbook were not verified. The numerical algorithm has not been rewritten.
 
-中文摘要：按四个到期月份反解看涨与看跌期权隐含波动率并作图。原始数值求根过程保留，收敛性与价格边界尚未验证。
+## Follow-up compatibility correction
+
+All eight scalar implied-volatility assignments now extract the one-element fsolve result with item(). NumPy 2.1.3, 2.2.6 and 2.3.5 emit a deprecation warning for the previous array-to-scalar conversion; no TypeError was observed in these environments. The fix does not add positivity, no-arbitrage or solver-convergence checks.

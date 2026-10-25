@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-A course exercise comparing IF, IH, IC and IM futures as hedges for an equally weighted ten-stock portfolio. `sample_01.py` is the original standalone implementation; its financial calculations are preserved, including the issue described below.
+A course exercise comparing IF, IH, IC and IM futures as hedges for an equally weighted ten-stock portfolio. `sample_01.py` is the original standalone implementation; its hedge-regression direction was corrected in the follow-up audit described below.
 
 ## Assignment tasks
 
@@ -28,7 +28,7 @@ The original export provider and continuous-contract roll convention were not re
 
 ## Run
 
-From the `financial-engineering` directory, after installing the this course’s requirements.txt and a pandas-compatible Excel reader:
+From the `financial-engineering` directory, after installing this course’s requirements.txt and a pandas-compatible Excel reader:
 
 ```powershell
 Set-Location assignment-01
@@ -39,9 +39,8 @@ The script prints regressions and a position size, writes three JPG charts local
 
 ## Known issues
 
-- **Regression direction is reversed.** The script uses portfolio returns as X and futures returns as Y. The assignment requires portfolio returns as Y and futures returns as X, whose slope is then used as the hedge ratio. The current slope is used directly for the hedge position and also drawn against the opposite scatterplot axes. Hedge quantities and the fitted line therefore need correction and recalculation before substantive use. This historical error has been documented without rewriting the algorithm.
+- **Regression direction corrected.** Both live fits now regress portfolio returns on futures returns. Synthetic checks recover a known slope and its covariance/variance hedge ratio. Dates, source data and economic assumptions remain unverified; historical quantities must be recomputed before use.
 - The script assumes row alignment, fixed column positions and a complete price history. It has no date-join or missing-data validation.
 - Selection and estimation use the same observations; there is no out-of-sample hedge evaluation or transaction-cost analysis. The displayed position quantity is fractional rather than an implemented integer-contract decision.
 - Syntax-only compilation passed during packaging. Numerical correctness and end-to-end execution with market data were not verified.
 
-中文摘要：比较四种股指期货的股票组合套保作业。原代码保留了回归方向错误，解释套保比率前必须先修正并重新计算。

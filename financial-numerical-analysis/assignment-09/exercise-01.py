@@ -9,25 +9,25 @@ b = np.array([[7],
               [-3],
               [11]])
 
-def jacobi_iteration(A, b, e):
-    n = len(A[:, 0])
-    x0 = np.zeros([n, 1])
-    x1 = np.zeros([n, 1])
-    for i in range(n):
-        sum_bonus = 0
-        for a in range(n):
-            if i != a:
-                sum_bonus += A[i, a]*x0[a]
-        x1[i] = 1/A[i, i]*(b[i]-sum_bonus)
-    while np.abs(np.abs(x1).sum()-np.abs(x0).sum()) > e:
-        x0 = x1.copy()
-        # .copy至关重要，把x1存为副本，x1和x2分开。改变x1不会影响x2.
+def jacobi_iteration(A, b, e, max_iter=10000):
+    """Course iteration with an iterate-difference/residual stop and finite cap."""
+    A = np.asarray(A, dtype=float)
+    b = np.asarray(b, dtype=float).reshape(-1, 1)
+    n = len(b)
+    if A.shape != (n, n) or not np.all(np.isfinite(A)) or not np.all(np.isfinite(b)):
+        raise ValueError("A and b must be finite and have compatible dimensions")
+    if e <= 0 or not np.isfinite(e) or max_iter < 1 or np.any(np.diag(A) == 0):
+        raise ValueError("Require positive tolerance/iteration limit and nonzero diagonal")
+    x = np.zeros((n, 1))
+    for iteration in range(max_iter):
+        old = x.copy()
         for i in range(n):
-            sum_bonus = 0
-            for a in range(n):
-                if i != a:
-                    sum_bonus += A[i, a] * x0[a]
-            x1[i] = 1 / A[i, i] * (b[i] - sum_bonus)
-            print(x1)
-    return x1
+            total = sum(A[i, j] * old[j, 0] for j in range(n) if j != i)
+            x[i, 0] = (b[i, 0] - total) / A[i, i]
+        if not np.all(np.isfinite(x)):
+            raise RuntimeError("Jacobi iteration diverged")
+        print(x)  # Retain the assignment requirement to show each iteration.
+        if np.linalg.norm(x - old, np.inf) <= e and np.linalg.norm(A @ x - b, np.inf) <= e:
+            return x
+    raise RuntimeError("Jacobi did not converge within max_iter")
 print('根为：\n', jacobi_iteration(A, b, 0.1))

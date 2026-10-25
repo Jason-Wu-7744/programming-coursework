@@ -84,7 +84,7 @@ x_show = pd.date_range('2016-01-04', '2016-10-18', freq='D')
 x_show_t = (x_show - pd.to_datetime('2016/01/01', format='%Y/%m/%d'))/np.timedelta64(1, 'D')
 x_show_tc_t = tc - x_show_t
 x_show_t_m = x_show_tc_t**m
-y_show = x[0, 0] + x[1, 0]*x_show_t_m + x[2, 0]*x_show_t_m*np.cos(w*np.log(x_show_t)) + x[3, 0]*x_show_t_m*np.sin(w*np.log(x_show_t))
+y_show = x[0, 0] + x[1, 0]*x_show_t_m + x[2, 0]*x_show_t_m*np.cos(w*np.log(x_show_tc_t)) + x[3, 0]*x_show_t_m*np.sin(w*np.log(x_show_tc_t))
 plt.plot(x_show, y_show, '-r')
 plt.legend(['real value', 'fitted value'])
 plt.xticks(pd.to_datetime(['2016/01/01', '2016/06/01', '2016/10/25'], format='%Y/%m/%d'))

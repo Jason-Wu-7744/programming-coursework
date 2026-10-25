@@ -33,3 +33,7 @@ Create a Python 3.12 environment and install the course-level `requirements.txt`
 - `ai-assisted/` preserves a separately labeled AI-assisted version; it is not represented as unaided student code.
 
 Publication privacy changes: the report generator uses a generic Jason author block and its own directory rather than an academic identity template or a server home path. A student-number suffix was removed from the AI-assisted script description.
+
+## Follow-up corrections
+
+Coverage and independence likelihoods now handle zero-count log terms with scipy.special.xlogy in both retained backtest versions. Coverage is finite for zero/all exceedances. Independence remains undefined when a predecessor state is never observed. Synthetic event sequences were tested; historical VaR estimates, signs, assumptions and input filtering were not revalidated. See the root audit.

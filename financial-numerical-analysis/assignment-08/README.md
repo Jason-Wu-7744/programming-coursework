@@ -44,6 +44,6 @@ Keep this assignment folder as the working directory even for code inside extra/
 
 Every retained Python file passed in-memory syntax compilation only. No imports, database/network call, empirical analysis, simulation, figure or numerical answer was executed or certified.
 
-The Gaussian example uses integer arrays and can truncate intermediate fractions. Explicit inverses and normal equations can be unstable. The primary LPPLS plot uses log(t) where fitting uses log(tc-t); this inconsistency is retained. The extra least-squares variant is not full nonlinear calibration.
+Gaussian elimination now converts its augmented matrix to floating point, and the primary LPPLS plot now uses log(tc-t), matching its fitted design. These audit corrections have synthetic checks; explicit inverses and normal equations can still be unstable. The extra least-squares variant is not full nonlinear calibration.
 
 Preparation changed filenames/references, privacy-sensitive strings, personal paths and connection settings only. Known numerical behavior was documented rather than silently corrected.

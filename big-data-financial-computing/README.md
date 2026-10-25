@@ -27,7 +27,7 @@ Python 3.12 is used for publication-time syntax checks. Install the packages in 
 
 ## Validation and known issues
 
-See [QUALITY.md](QUALITY.md). Syntax checks do not run the coursework or validate statistical conclusions. Original algorithms were not silently rewritten: method and interpretation issues are described in the assignment notes. Original data should be independently obtained under the provider's access and redistribution conditions.
+See [QUALITY.md](QUALITY.md). Syntax checks do not run the coursework or validate statistical conclusions. Numerical corrections are explicitly documented in the root audit: method and interpretation issues are described in the assignment notes. Original data should be independently obtained under the provider's access and redistribution conditions.
 
 Public files use the preferred name Jason. No real API key, deployment login or student identifier should be committed. No open-source license has been selected; public availability alone is not a license grant.
 

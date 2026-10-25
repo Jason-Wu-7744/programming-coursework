@@ -1,5 +1,7 @@
 # Course paper: AI-related stocks and asset pricing
 
+English | [中文](README.zh-CN.md)
+
 An exploratory course study combining CAPM, Fama–French regressions, joint tests, industry-chain grouping and random-forest feature importance. The course required a research topic combining financial computation and machine learning; this folder preserves the submitted code, not a peer-reviewed research claim.
 
 ## Files and execution

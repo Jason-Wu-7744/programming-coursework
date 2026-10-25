@@ -62,7 +62,7 @@ print(data_matrix)
 data_matrix['rm'] = data_matrix['rm-rf'] + data_matrix['rf']
 
 
-data_matrix_monthly = data_matrix.set_index('date').resample('M').agg({
+data_matrix_monthly = data_matrix.set_index('date').resample(pd.offsets.MonthEnd()).agg({
     'rf': lambda x: (1 + x).prod() - 1,
     'rm': lambda x: x.sum(),
     'return600021': lambda x: x.sum(),

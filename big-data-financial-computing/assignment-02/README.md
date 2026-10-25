@@ -33,3 +33,7 @@ Create a Python 3.12 environment and install the course-level `requirements.txt`
 ## Review notes
 
 - This is a course archive. Python syntax is checked separately; the historical financial results have not been fully rerun or independently validated for publication.
+
+## Follow-up corrections
+
+The three-month winner return now uses the winner stock in every holding month, rather than mixing loser returns into the first two months. Monthly resampling uses an explicit pandas MonthEnd offset instead of the removed M alias. Synthetic fixtures cover both changes; economic interpretation and historical data remain unverified.

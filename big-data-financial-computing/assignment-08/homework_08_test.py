@@ -1,3 +1,4 @@
+from scipy.special import xlogy
 import numpy as np
 import pandas as pd
 import requests
@@ -7,28 +8,40 @@ from arch import arch_model
 
 # 定义三种检验
 def myfun_Kupiec(r, VaR, pstar):
-    N = np.sum(r > VaR)
-    T = len(r)
-    LRuc = -2*((T-N)*np.log(1-pstar)+N*np.log(pstar)) + 2*((T-N)*np.log(1-N/T)+N*np.log(N/T))
-    pvalue_LRuc = 1 - chi2.cdf(LRuc, 1)
+    """Coverage LR with the limiting convention 0*log(0) = 0."""
+    if np.asarray(r).shape != np.asarray(VaR).shape:
+        raise ValueError("Returns/losses and VaR must have matching shapes")
+    ind = np.asarray(r) > np.asarray(VaR)
+    T = ind.size
+    if T == 0 or not 0 < pstar < 1:
+        raise ValueError("Require observations and 0 < pstar < 1")
+    N = int(np.sum(ind))
+    observed = N / T
+    null_loglik = xlogy(T - N, 1 - pstar) + xlogy(N, pstar)
+    fitted_loglik = xlogy(T - N, 1 - observed) + xlogy(N, observed)
+    LRuc = max(0.0, float(2 * (fitted_loglik - null_loglik)))
+    pvalue_LRuc = chi2.sf(LRuc, 1)
     return LRuc, pvalue_LRuc
 
 def myfun_Christoffersen(r, VaR):
-    ind = r > VaR
-    ind1 = ind[:-1]
-    ind2 = ind[1:]
-    n00 = np.sum((ind1==0) & (ind2==0))
-    n01 = np.sum((ind1==0) & (ind2==1))
-    n10 = np.sum((ind1==1) & (ind2==0))
-    n11 = np.sum((ind1==1) & (ind2==1))
-    Pi01 = n01/(n01+n00)
-    Pi11 = n11/(n10+n11)
-    Pi2 = (n01+n11)/(n00+n01+n10+n11)
-    LRind = (n00+n10)*np.log(1-Pi2) + (n01+n11)*np.log(Pi2) - \
-            n00*np.log(1-Pi01) - n01*np.log(Pi01) - n10*np.log(1-Pi11) - n11*np.log(Pi11)
-    LRind = LRind*-2
-    pvalue_LRind = 1-chi2.cdf(LRind, 1)
-    return LRind, pvalue_LRind
+    """Independence LR; an unobserved predecessor state is not identified."""
+    if np.asarray(r).shape != np.asarray(VaR).shape:
+        raise ValueError("Returns/losses and VaR must have matching shapes")
+    ind = (np.asarray(r) > np.asarray(VaR)).reshape(-1)
+    before, after = ind[:-1], ind[1:]
+    n00 = int(np.sum(~before & ~after))
+    n01 = int(np.sum(~before & after))
+    n10 = int(np.sum(before & ~after))
+    n11 = int(np.sum(before & after))
+    if n00 + n01 == 0 or n10 + n11 == 0:
+        return np.nan, np.nan
+    p01 = n01 / (n00 + n01)
+    p11 = n11 / (n10 + n11)
+    pooled = (n01 + n11) / (n00 + n01 + n10 + n11)
+    independent = xlogy(n00 + n10, 1 - pooled) + xlogy(n01 + n11, pooled)
+    markov = xlogy(n00, 1 - p01) + xlogy(n01, p01) + xlogy(n10, 1 - p11) + xlogy(n11, p11)
+    LRind = max(0.0, float(2 * (markov - independent)))
+    return LRind, chi2.sf(LRind, 1)
 
 def myfun_Kupiec_Christoffersen(LRuc, LRind):
     LRcc = LRuc + LRind

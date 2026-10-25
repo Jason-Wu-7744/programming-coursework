@@ -31,7 +31,7 @@ The table is supplied exercise data; its market-data provider is not documented.
 
 ## Run
 
-From the `financial-engineering` directory, after installing the this course’s requirements.txt and a pandas-compatible Excel reader:
+From the `financial-engineering` directory, after installing this course’s requirements.txt and a pandas-compatible Excel reader:
 
 ```powershell
 Set-Location assignment-02
@@ -48,4 +48,3 @@ The script prints intermediate prices, yields, durations, portfolio values and a
 - The hedge follows the supplied fixed-CTD duration approximation and unchanged-yield/value assumptions. It does not model CTD switching, basis risk, convexity or a dynamic hedge.
 - Syntax-only compilation passed during packaging. Numerical correctness and end-to-end execution with the original workbook were not verified.
 
-中文摘要：根据债券现金流、到期收益率和久期估算国债期货套保数量。日期与选债行号固定，替换数据时需要同步复核参数。

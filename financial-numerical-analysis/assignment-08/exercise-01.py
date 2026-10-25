@@ -39,7 +39,8 @@ def BackInteration(U, g, n):
 
 # 求根程序
 def Equation_GEPivot(A, b):
-    Au = np.concatenate((A, b), axis=1)
+    # Audit correction: preserve fractional elimination updates for integer inputs.
+    Au = np.concatenate((A, b), axis=1).astype(float)
     n = len(Au[:, 0])
     k = 0
     while k < n:

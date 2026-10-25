@@ -40,7 +40,7 @@ See also [supplementary practice](financial-numerical-analysis/supplementary/REA
 
 ## Introduction to Financial Engineering
 
-Four assignments apply log returns, OLS regression, bond cash flows and duration, the BSM model and numerical root finding to derivatives pricing and hedging. The original classroom calculations are retained. Assignment 01 documents a known regression-direction error that requires correction before interpreting its hedge ratio.
+Four assignments apply log returns, OLS regression, bond cash flows and duration, the BSM model and numerical root finding to derivatives pricing and hedging. The original classroom calculations are retained. Assignment 01 now regresses portfolio returns on futures returns in both model-selection and final-fit steps; date alignment and data assumptions still require review.
 
 | Assignment | Topic | Main content |
 | --- | --- | --- |
@@ -123,3 +123,7 @@ Course-specific details are recorded in:
 Documented issues include numerical stopping and convergence behavior, data alignment and missing values, fixed-parameter and plotting inconsistencies, and the regression direction in Financial Engineering Assignment 01. Read the relevant notes, prepare the inputs and review the calculations before interpreting results. No open-source license has been selected; public visibility alone grants no unstated source or external-data redistribution rights.
 
 Maintained by **Jason**. The financial-report analysis system is maintained as a separate project.
+
+## Follow-up audit
+
+[Audit changes and focused synthetic tests](AUDIT.md) document subsequent corrections to selected implementation errors. These do not certify data-dependent results or all source code. Historical Chinese source comments, output labels and report-generator text are retained; documentation has English and Chinese options.

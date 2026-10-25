@@ -81,9 +81,10 @@ R_squared = []
 # R_squared.append(results.rsquared)
 
 for i in range(return_futures.shape[1]):
-    x = return_stock.loc[:, ['portfolio']].values
+    # Minimum-variance hedge: portfolio return is the response, futures the regressor.
+    x = return_futures.iloc[:, [i]].values
     X = sm.add_constant(x)
-    Y = return_futures.iloc[:, i]
+    Y = return_stock.loc[:, 'portfolio']
     model = sm.OLS(Y, X)
     results = model.fit()
     print(results.summary())
@@ -94,13 +95,14 @@ print(R_squared)
 best_futures_index = R_squared.index(max(R_squared))
 print("回归效果最好的是"+str(return_futures.columns[best_futures_index]))
 print("其回归系数为")
-x = return_stock.loc[:, ['portfolio']].values
+# Use the same corrected regression direction for the selected contract.
+x = return_futures.iloc[:, [best_futures_index]].values
 X = sm.add_constant(x)
-Y = return_futures.iloc[:, best_futures_index]
+Y = return_stock.loc[:, 'portfolio']
 model = sm.OLS(Y, X)
 results = model.fit()
-best_alpha = results.params[0]
-best_beta = results.params[1]
+best_alpha = results.params.iloc[0]
+best_beta = results.params.iloc[1]
 print(best_beta)
 
 # 以上得到了最小方差套期保值比例

@@ -120,4 +120,4 @@ print("mu:", mu)
 print("q:", q)
 
 print("The parameter $q$ is", f'{q:.3f}')
-print('The parameter $\mu$ is', f'{mu:.3f}')
+print(r'The parameter $\mu$ is', f'{mu:.3f}')
