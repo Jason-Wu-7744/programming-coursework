@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+scipy
+statsmodels
+scikit-learn
+arch
+requests
+akshare
+openpyxl
+python-docx

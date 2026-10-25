@@ -1,0 +1,11 @@
+# Observed third-party imports; no source versions were recorded.
+akshare
+matplotlib
+numpy
+pandas
+scipy
+sqlalchemy
+
+# Backends required by retained SQL URLs and pandas XLSX readers.
+pymysql
+openpyxl
