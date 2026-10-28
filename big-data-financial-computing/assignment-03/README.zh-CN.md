@@ -1,29 +1,9 @@
-# 作业 03：三因子与横截面检验
+# 作业03：因子模型与横截面检验
 
-[English](README.md) | [中文](README.zh-CN.md)
+[English](README.md)
 
-结合行业时序回归、组合排序与逐月 Fama–MacBeth 回归。
+开展因子模型时间序列回归、组合排序和月度横截面回归。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [fama-macbeth/homework_03_FM.py](fama-macbeth/homework_03_FM.py)
-- [sort/homework_03_sort.py](sort/homework_03_sort.py)
-- [timeseries/homework_03_timeseries.py](timeseries/homework_03_timeseries.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-组合排序日期、可用信息的滞后、回归推断和数据口径需要重新核对。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
-
-## 后续兼容性修复
-
-Fama–MacBeth四处系数读取改为Series显式iloc位置索引，用合成四参数回归检查实际追加表达式。没有重验分组、日期、推断或历史估计。
+- [timeseries/homework_03_timeseries.py](timeseries/homework_03_timeseries.py) — 行业时间序列因子回归。
+- [sort/homework_03_sort.py](sort/homework_03_sort.py) — 规模与价值组合排序。
+- [fama-macbeth/homework_03_FM.py](fama-macbeth/homework_03_FM.py) — Fama–MacBeth 横截面回归。

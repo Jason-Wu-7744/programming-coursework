@@ -1,30 +1,10 @@
-# 作业 08：VaR 与回测
+# 作业08：VaR 与回测
 
-[English](README.md) | [中文](README.zh-CN.md)
+[English](README.md)
 
-比较正态、GARCH、历史模拟和 POT 方法，进行覆盖性与独立性检验。
+采用正态、GARCH、历史模拟与超阈值方法估计尾部风险，并检验 VaR 超损事件。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [ai-assisted/generate_report.py](ai-assisted/generate_report.py)
-- [ai-assisted/homework_08.py](ai-assisted/homework_08.py)
-- [homework_08.py](homework_08.py)
-- [homework_08_test.py](homework_08_test.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-原实现过滤较大的绝对收益率，可能影响尾部风险；另需检查损失符号、滚动窗口及似然比检验边界。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
-
-## 后续修复
-
-两版回测用xlogy处理零频数似然，零/全突破的覆盖检验可得有限值；从未观测到某前置状态时独立性仍不可识别。已测合成事件序列，未重新验证历史VaR估计、符号、假设或输入过滤。
+- [homework_08.py](homework_08.py) — 上海电力 VaR 估计与图表。
+- [homework_08_test.py](homework_08_test.py) — Kupiec 覆盖率检验与 Christoffersen 独立性检验。
+- [ai-assisted/homework_08.py](ai-assisted/homework_08.py) — AI 辅助版本：VaR 对照与回测。
+- [ai-assisted/generate_report.py](ai-assisted/generate_report.py) — AI 辅助版本：文档报告生成。

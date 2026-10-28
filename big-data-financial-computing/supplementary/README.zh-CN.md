@@ -1,7 +1,7 @@
-# 补充数据访问练习
+# 补充练习：金融数据获取
 
-[English](README.md) | 中文
+[English](README.md)
 
-金融数据访问接口练习。数据提供方的接口可能已经变化。
+使用 AkShare 进行金融数据获取练习。
 
-运行时以脚本所在目录为工作目录，私下取得读取语句要求的数据。不分发原数据库导出；接口和历史数据可用性没有通过完整运行验证。
+- [akshare-data-access.py](akshare-data-access.py) — 通过 AkShare 接口获取金融市场数据。

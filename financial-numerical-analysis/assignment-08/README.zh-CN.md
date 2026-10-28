@@ -1,28 +1,10 @@
-# 作业 08：直接求解与金融模型拟合
+# 作业08：直接求解与模型拟合
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-练习高斯消元、LU 及给定参数的金融模型线性拟合。
+实现高斯消元和LU分解，并完成三因子与LPPLS拟合例子。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [exercise-01.py](exercise-01.py)
-- [exercise-02.py](exercise-02.py)
-- [exercise-03.py](exercise-03.py)
-- [exercise-04.py](exercise-04.py)
-- [extra/exercise-04_lstsq_alternative.py](extra/exercise-04_lstsq_alternative.py)
-- [extra/lu_alternative.py](extra/lu_alternative.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-原版本存在整数数组消元截断小数、LPPLS 拟合与绘图时间变量不一致等问题，不能据语法通过认定结果正确。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
+- [部分选主元高斯消元](exercise-01.py)。
+- [LU求解](exercise-02.py)与[另一分解实现](extra/lu_alternative.py)。
+- [Fama–French参数估计](exercise-03.py)。
+- [LPPLS线性系数拟合](exercise-04.py)，另有[最小二乘版本](extra/exercise-04_lstsq_alternative.py)。

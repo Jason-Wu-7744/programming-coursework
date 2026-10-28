@@ -1,31 +1,10 @@
-# 作业 02：控制流程与函数
+# 作业02：流程控制与函数
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-使用条件、循环、函数和匿名函数完成课程中的计算练习。
+练习循环、函数和枚举，并完成简单的随机模拟。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [exercise-01.py](exercise-01.py)
-- [exercise-02.py](exercise-02.py)
-- [exercise-03.py](exercise-03.py)
-- [exercise-04.py](exercise-04.py)
-- [exercise-05.py](exercise-05.py)
-- [exercise-06.py](exercise-06.py)
-- [exercise-07.py](exercise-07.py)
-- [exercise-08.py](exercise-08.py)
-- [extra/sine_integration_practice.py](extra/sine_integration_practice.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-原代码保持课程提交时的数值与统计处理选择，结果尚未全面复算。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
+- [求和](exercise-01.py)与[整除判断](exercise-02.py)。
+- [个税计算练习](exercise-03.py)、[数列求和](exercise-04.py)与[麦粒翻倍问题](exercise-05.py)。
+- [百鸡问题枚举](exercise-06.py)与[工资分配](exercise-07.py)。
+- [随机选门模拟](exercise-08.py)与[正弦积分练习](extra/sine_integration_practice.py)。

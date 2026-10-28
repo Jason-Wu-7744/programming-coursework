@@ -1,44 +1,11 @@
-# 作业 03：NumPy 与金融数组
+# 作业03：NumPy与金融数组
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-练习数组运算、索引、矩阵及金融数据的数值处理。
+完成数组操作、矩阵计算、金融统计和分布抽样。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [exercise-01.py](exercise-01.py)
-- [exercise-02.py](exercise-02.py)
-- [exercise-03.py](exercise-03.py)
-- [exercise-04.py](exercise-04.py)
-- [exercise-05.py](exercise-05.py)
-- [exercise-06.py](exercise-06.py)
-- [exercise-07.py](exercise-07.py)
-- [exercise-08.py](exercise-08.py)
-- [exercise-09.py](exercise-09.py)
-- [exercise-10.py](exercise-10.py)
-- [exercise-11.py](exercise-11.py)
-- [exercise-12.py](exercise-12.py)
-- [exercise-13.py](exercise-13.py)
-- [exercise-14.py](exercise-14.py)
-- [exercise-15.py](exercise-15.py)
-- [exercise-16.py](exercise-16.py)
-- [exercise-17.py](exercise-17.py)
-- [exercise-18.py](exercise-18.py)
-- [exercise-19.py](exercise-19.py)
-- [exercise-20.py](exercise-20.py)
-- [exercise-21.py](exercise-21.py)
-- [exercise-22.py](exercise-22.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-原代码保持课程提交时的数值与统计处理选择，结果尚未全面复算。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
+- [数组生成](exercise-01.py)、[索引](exercise-02.py)与[掩码操作](exercise-12.py)。
+- [矩阵运算](exercise-05.py)与[线性方程组](exercise-11.py)。
+- [月度收益](exercise-14.py)、[估值统计](exercise-15.py)与[银行估值](exercise-17.py)。
+- [成交额](exercise-16.py)、[相关矩阵](exercise-18.py)与[投资组合计算](exercise-19.py)。
+- [二项与几何分布](exercise-20.py)、[正态与对数正态分布](exercise-21.py)、[Gamma与Beta分布](exercise-22.py)。

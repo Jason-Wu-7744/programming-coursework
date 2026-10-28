@@ -1,32 +1,10 @@
-# 作业 01：Python 数据类型
+# 作业01：Python数据类型
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-练习字符串、列表、元组、集合、字典、金融算术和序列化。
+用金融小例子练习Python容器、比较和基本运算。
 
-这是课程作业归档，不将指定题目和经典方法宣称为原创研究。题目仅作简短概述，不分发教师课件或原题。
-
-## 代码入口
-
-- [exercise-01.py](exercise-01.py)
-- [exercise-02.py](exercise-02.py)
-- [exercise-03.py](exercise-03.py)
-- [exercise-04.py](exercise-04.py)
-- [exercise-05.py](exercise-05.py)
-- [exercise-06.py](exercise-06.py)
-- [exercise-07.py](exercise-07.py)
-- [exercise-08.py](exercise-08.py)
-- [exercise-09.py](exercise-09.py)
-- [extra/pickle_readback.py](extra/pickle_readback.py)
-
-## 数据与运行
-
-在本课程目录安装 `requirements.txt` 中的依赖，再切换到本作业目录，按脚本相对路径运行。不同版本可能有不同的工作目录假设，以[英文详细说明](README.md)和实际读文件语句为准。
-
-原始行情、数据库表、课件附件和私人文档不随仓库发布。需另行取得允许使用的数据，并保持代码所要求的字段、日期、频率、单位、表格顺序和文件名。绘图还可能依赖本机中文字体。Python 3.12 用于发布时语法检查，不代表历史依赖环境已完整重建。
-
-## 验证与限制
-
-原代码保持课程提交时的数值与统计处理选择，结果尚未全面复算。
-
-常规检查覆盖语法和本地链接；另外已对指定修复运行合成输入测试，详见根审计。未执行依赖历史数据、网络或数据库的金融分析。AI 辅助版本在相应目录标注；部分参考代码因来源未确认而暂缓公开。英文页提供更具体的输入与已知问题记录。
+- [元组与证券属性](exercise-02.py)。
+- [列表](exercise-03.py)、[集合](exercise-04.py)与[汇率字典](exercise-05.py)。
+- [交易计算](exercise-06.py)、[持仓计算](exercise-07.py)与[银行指标比较](exercise-08.py)。
+- [列表统计与pickle保存](exercise-09.py)，以及[读取练习](extra/pickle_readback.py)。

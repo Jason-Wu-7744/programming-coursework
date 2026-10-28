@@ -2,89 +2,54 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Python coursework archive maintained by **Jason**, organized as assignments 01-14 within the **Programming Coursework Portfolio** collection. Required exercises, alternatives, practice, an older source version and explicitly labeled AI-assisted versions are preserved. Byte-identical copies are represented once, with a link where an exercise is repeated across assignments.
+Python coursework covering financial data, numerical methods and Matplotlib charts.
+
+## Assignments
+
+| Assignment | Contents |
+| --- | --- |
+| [01](assignment-01/README.md) | Python data types |
+| [02](assignment-02/README.md) | Control flow and functions |
+| [03](assignment-03/README.md) | NumPy and financial arrays |
+| [04](assignment-04/README.md) | Matplotlib and financial charts |
+| [05](assignment-05/README.md) | Pandas and price simulation |
+| [06](assignment-06/README.md) | Root finding and intertrade durations |
+| [07](assignment-07/README.md) | Fixed points and least squares |
+| [08](assignment-08/README.md) | Direct solvers and model fitting |
+| [09](assignment-09/README.md) | Iterative solvers and factor regression |
+| [10](assignment-10/README.md) | Polynomial interpolation |
+| [11](assignment-11/README.md) | Power iteration and financial networks |
+| [12](assignment-12/README.md) | Numerical integration and distributions |
+| [13](assignment-13/README.md) | Finite differences and stochastic paths |
+| [14](assignment-14/README.md) | Ordinary differential equations |
+
+[Supplementary exercises](supplementary/README.md)
 
 <!-- gallery:start -->
-## Selected visual outputs
-
-Archived Matplotlib figures from the coursework folders, with original labels retained. These images were not regenerated after the code audit. Each figure links to its implementation; see the [validation notes](QUALITY.md) for scope.
+## Selected results
 
 ### Monte Carlo price paths
 
 ![Monte Carlo price paths](assets/figures/historical-monte-carlo-paths.jpg)
 
-Observed prices (black) alongside five colored stochastic sample paths from the original simulation exercise.
+Observed prices (black) and five simulated sample paths (color).
 
-[Assignment 05 · simulation variant](assignment-05/extra/exercise-06_monte_carlo_alternative.py)
+[Assignment 05 · simulation](assignment-05/extra/exercise-06_monte_carlo_alternative.py)
 
 ### Intraday price and volume
 
 ![Intraday price and volume](assets/figures/intraday-price-volume.jpg)
 
-Aligned price and volume panels separate morning and afternoon trading sessions and mark the previous close. Axes: p = price, v = volume, t = time.
+Transaction prices and volume by trading session, with the previous close marked in red.
 
-[Assignment 04 · financial visualization](assignment-04/exercise-05.py)
+[Assignment 04 · financial charts](assignment-04/exercise-05.py)
 
-### Finite-difference spectrum comparison
+### Finite-difference comparison
 
-![Finite-difference spectrum comparison](assets/figures/finite-difference-spectrum.jpg)
+![Finite-difference comparison](assets/figures/finite-difference-spectrum.jpg)
 
-Forward, backward and central differences applied to the supplied q and τ(q) table. Horizontal axis: α = dτ(q)/dq; vertical axis: f(α) = qα − τ(q).
+Forward, backward and central differences. Horizontal: α = dτ(q)/dq; vertical: f(α) = qα − τ(q).
 
-[Assignment 13 · numerical differentiation](assignment-13/exercise-01.py)
+[Assignment 13 · finite differences](assignment-13/exercise-01.py)
 
 <!-- gallery:end -->
-
-
-These are student solutions to prescribed tasks, not claims of original research. Alternative filenames do not prove originality. Classroom-practice provenance has not been independently verified. Explicit other-person files, their unverified helper and the exam directory are excluded. The reviewed historical figures in this gallery are included; instructor handouts, original reports, raw datasets, databases and archives are excluded. No license to redistribute external course or financial data is asserted.
-
-## Assignment index
-
-| Assignment | Topic | Available Python files |
-| --- | --- | ---: |
-| [01](assignment-01/README.md) | Python data types | 10 |
-| [02](assignment-02/README.md) | Control flow and functions | 9 |
-| [03](assignment-03/README.md) | NumPy and financial arrays | 22 |
-| [04](assignment-04/README.md) | Matplotlib and financial charts | 6 |
-| [05](assignment-05/README.md) | Pandas and geometric Brownian motion | 12 |
-| [06](assignment-06/README.md) | Root finding and intertrade durations | 6 |
-| [07](assignment-07/README.md) | Fixed points and least squares | 6 |
-| [08](assignment-08/README.md) | Direct solvers and financial-model fitting | 6 |
-| [09](assignment-09/README.md) | Iterative solvers and three-factor regression | 3 |
-| [10](assignment-10/README.md) | Polynomial interpolation | 3 |
-| [11](assignment-11/README.md) | Power iteration and financial networks | 3 |
-| [12](assignment-12/README.md) | Numerical integration and distributions | 5 |
-| [13](assignment-13/README.md) | Numerical differentiation and stochastic simulation | 2 |
-| [14](assignment-14/README.md) | Ordinary differential equations | 4 |
-
-[Shared notes](shared/README.md) explain why the cross-week reference file is withheld. [Supplementary practice](supplementary/README.md) holds top-level exercises with unknown assignment association.
-
-## Environment and running
-
-~~~text
-python -m pip install -r requirements.txt
-~~~
-
-Requirements reflect observed imports; source versions and a lockfile were absent, so versions are not invented. pymysql is selected by retained SQLAlchemy URLs; openpyxl supports pandas XLSX readers. akshare is used by a supplementary request. Turtle, pickle, math and os are Python standard-library modules. Runtime/package compatibility, APIs, GUI backends and requested fonts have not been tested.
-
-Each assignment README describes requirements, script roles, input fields/source, working directory and known limitations. Run each script from its assignment directory, even when the script is in a subfolder. The shared/ page explains why the cross-week reference source is withheld.
-
-## Private inputs and connection configuration
-
-Obtain course tables, RESSET exports and research-derived network data through authorized access. Input filenames and observed schemas are documented; no download address is invented. Keep data private and outside version control. Small numerical tables embedded in exercise source are retained.
-
-Database scripts require FNA_DB_HOST, FNA_DB_PORT, FNA_DB_USER, FNA_DB_PASSWORD and FNA_DB_NAME in the process environment. All must be supplied privately; no original value remains. [.env.example](.env.example) lists names only and is not automatically loaded. Do not commit populated environment files or private data.
-
-## Validation and historical behavior
-
-All retained Python files passed syntax compilation. Selected numerical functions also passed isolated synthetic regression checks, documented in the [central audit](../AUDIT.md). Historical data-dependent analyses and the gallery figures were not rerun.
-
-Initial publication preparation organized and privacy-redacted the archive. The subsequent audit corrected integer-array elimination, iterative stopping and return values, the LPPLS plotting variable and an invalid string escape. Missing-return treatment, historical coverage, simulation calibration and incomplete GBM difference schemes still require review; see each assignment's notes.
-
-A private preparation audit is stored outside this repository and must not be published. Public maintainer: Jason.
-
-## Teaching-material boundary
-
-Teacher slides, handouts, full assignment prompts, supplied answer code and source datasets are not redistributed. The brief task summaries here were written for this archive.
-
-Source files that matched a classroom example or whose classroom-reference provenance remained unresolved have been withheld pending authorship confirmation or permission. This is a conservative publication choice, not a determination of copyright ownership or proof of copying. Assignment folders remain available even when some reference-dependent scripts are withheld.

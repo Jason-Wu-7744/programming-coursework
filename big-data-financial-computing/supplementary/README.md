@@ -1,7 +1,7 @@
-# Supplementary
+# Supplementary: financial data access
 
-English | [中文](README.zh-CN.md)
+[简体中文](README.zh-CN.md)
 
-Supplementary financial-data access practice. Provider interfaces may have changed.
+Financial-data access practice using AkShare.
 
-Use the script directory as the working directory. Supply the local data referenced in its read calls; no original database exports are redistributed.
+- [akshare-data-access.py](akshare-data-access.py) — Retrieve financial market data through AkShare interfaces.
